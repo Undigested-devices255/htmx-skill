@@ -8,32 +8,41 @@ When activated, Claude gains access to:
 
 - **Complete attribute reference** — all `hx-*` attributes with syntax, modifiers, inheritance rules, and edge cases
 - **24 UI patterns** — click-to-edit, infinite scroll, active search, lazy loading, inline validation, modals, tabs, file upload, sortable, progress bars, and more
-- **Server-side integration** — working endpoint examples for Flask, Express, Django, Spring Boot, Go, Rails, Laravel, and PHP
+- **Server-side integration** — working endpoint examples for Flask, Express, Django, FastAPI, Spring Boot, Go, Rails, and Laravel
 - **Extension guides** — SSE, WebSocket, Idiomorph (DOM morphing), head-support, response-targets, preload, and how to build custom extensions
 - **Response handling** — HTTP headers, status code configuration, OOB swaps, and the 204 vs 200 gotcha
 - **CSS animations** — htmx lifecycle classes (`htmx-swapping`, `htmx-settling`, `htmx-added`) and View Transitions API
 
 ## Installation
 
-### One-command install
+### From GitHub (recommended)
 
 ```bash
-claude skill install /path/to/htmx
+git clone https://github.com/mintarasss/htmx-skill.git
 ```
 
-### Manual install
-
-Copy the `htmx/` directory into your Claude Code skills directory:
+Then copy the `htmx/` folder into your Claude Code skills directory:
 
 ```bash
 # Global (available in all projects)
-cp -r htmx ~/.claude/skills/htmx
+cp -r htmx-skill/htmx ~/.claude/skills/htmx
 
-# Project-specific
-cp -r htmx .claude/skills/htmx
+# Project-specific (only this project)
+mkdir -p .claude/skills
+cp -r htmx-skill/htmx .claude/skills/htmx
 ```
 
-Then restart Claude Code or run `/reload-plugins`.
+### One-liner
+
+```bash
+# Global
+git clone https://github.com/mintarasss/htmx-skill.git /tmp/htmx-skill && cp -r /tmp/htmx-skill/htmx ~/.claude/skills/htmx && rm -rf /tmp/htmx-skill
+
+# Project-specific
+git clone https://github.com/mintarasss/htmx-skill.git /tmp/htmx-skill && mkdir -p .claude/skills && cp -r /tmp/htmx-skill/htmx .claude/skills/htmx && rm -rf /tmp/htmx-skill
+```
+
+After installing, restart Claude Code or run `/reload-plugins`.
 
 ## When It Activates
 
@@ -54,13 +63,13 @@ htmx/
 ├── evals/
 │   └── evals.json                  # Test cases and assertions
 └── references/
-    ├── attributes.md               # Complete attribute reference with all options
-    ├── patterns.md                 # 24 UI patterns with full HTML + server code
-    ├── extensions.md               # SSE, WebSocket, Idiomorph, preload, etc.
-    └── server-side.md              # Server integration, headers, framework examples
+    ├── attributes.md    # Complete attribute reference with all options
+    ├── patterns.md      # 24 UI patterns with full HTML + server code
+    ├── extensions.md    # SSE, WebSocket, Idiomorph, preload, etc.
+    └── server-side.md   # Server integration, headers, framework examples
 ```
 
-The skill uses **progressive disclosure** — the main `SKILL.md` (~280 lines) covers the most common attributes and patterns. Reference files are consulted only when deeper detail is needed, keeping context usage efficient.
+The skill uses **progressive disclosure** — the main `SKILL.md` (~320 lines) covers the most common attributes and patterns. Reference files are consulted only when deeper detail is needed, keeping context usage efficient.
 
 ## Examples
 
@@ -80,7 +89,7 @@ Here are some things you can ask Claude with this skill active:
 
 - **Working code, not just rules** — every pattern includes complete HTML and server-side code you can copy and run
 - **Covers edge cases** — the 204 vs 200 gotcha, `<template>` wrapping for OOB table rows, GET excluding form values, body targeting quirk
-- **Framework-agnostic server examples** — Flask, Express, Django, Spring Boot, Go, Rails, Laravel, PHP
+- **Framework-agnostic server examples** — Flask, Express, Django, FastAPI, Spring Boot, Go, Rails, and Laravel
 - **Full extension coverage** — SSE, WebSocket, Idiomorph, head-support, response-targets, preload
 - **Inheritance documentation** — which attributes inherit and which don't, plus `hx-disinherit`/`hx-inherit` controls
 
