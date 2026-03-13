@@ -1,0 +1,20 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude Code local settings
+.claude/
+
+# Eval artifacts (development only)
+htmx-workspace/
+htmx/evals/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
