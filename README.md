@@ -1,5 +1,7 @@
 # htmx Skill for Claude Code
 
+> **htmx version: 2.x** (built from htmx 2.0.8 documentation)
+
 A comprehensive [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) that gives Claude deep knowledge of [htmx](https://htmx.org) — the library that extends HTML with attributes for AJAX, CSS transitions, WebSockets, and Server-Sent Events.
 
 ## What This Skill Does
@@ -95,7 +97,9 @@ Here are some things you can ask Claude with this skill active:
 
 ## Built From Official Documentation
 
-This skill was built by thoroughly reading and distilling the [official htmx documentation](https://htmx.org/docs/), including:
+This skill covers **htmx 2.x** (specifically built from the 2.0.8 documentation). If you're working with htmx 1.x, note that some attributes and behaviors differ — the [htmx 1 compatibility extension](https://extensions.htmx.org/extensions/htmx-1-compat/) can help bridge the gap.
+
+It was built by thoroughly reading and distilling the [official htmx documentation](https://htmx.org/docs/), including:
 
 - Core documentation (`docs.md`)
 - All 35 attribute reference pages
